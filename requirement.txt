@@ -1,0 +1,4 @@
+# Python package dependency list.
+# use "pip install -r requirements.txt" to install all of the following packages.
+# -r requirements/dev.txt
+# Django==1.6.4

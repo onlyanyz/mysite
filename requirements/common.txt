@@ -1,0 +1,2 @@
+# common packages needed to install for all of the environments.
+# Django==1.6.4
