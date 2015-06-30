@@ -14,7 +14,7 @@ __pycache__/
 *.so
 
 # IDE stuff:
-.idea/
+*.idea/
 
 # Django stuff:
 *.log
