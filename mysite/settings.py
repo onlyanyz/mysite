@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
 """
 Django settings for mysite project.
 
@@ -10,6 +13,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import logging
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -59,15 +63,24 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME':'myDatabaseName',
+        # 'USER':'root',
+        # 'PASSWORD':'passwd',
+        # 'HOST':'127.0.0.1',
+        # 'PORT':'3306',
     }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-CN.utf-8'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -80,7 +93,54 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# STATIC_JS = os.path.join(BASE_DIR,'static/js/').replace('\\','/')
+
+STATICFILES_DIRS = (
+    ('js',os.path.join(STATIC_ROOT,'js') ),
+    ('css',os.path.join(STATIC_ROOT,'css') ),
+    # ('img',os.path.join(STATIC_ROOT,'img') ),
+)
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
+
+# logging configuration
+LOGGING = {
+      'version': 1,
+      'disable_existing_loggers': True,
+      'formatters': {
+          'simple': {
+              'format': '[%(asctime)s] %(levelname)s : %(message)s'
+          },
+          'verbose': {
+              'format': '[%(asctime)s] %(levelname)s %(module)s %(process)d %(thread)d : %(message)s'
+         },
+     },
+     'handlers': {
+         'null': {
+             'level': 'DEBUG',
+             'class': 'django.utils.log.NullHandler',
+         },
+         'console': {
+             'level': 'DEBUG',
+             'class': 'logging.StreamHandler',
+             'formatter': 'simple',
+         },
+         'file': {
+             'level': 'DEBUG',
+             'class': 'logging.FileHandler',
+             'formatter': 'simple',
+             'filename': os.path.join(BASE_DIR, 'logs/all.log'),
+             'mode': 'a',
+         },
+     },
+     'loggers': {
+         'django.request': {
+              'handlers': ['file', 'console'],
+             'level':'DEBUG',
+             'propagate': True,
+         },
+     },
+}
