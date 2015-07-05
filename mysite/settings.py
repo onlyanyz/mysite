@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -94,7 +95,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-# STATIC_JS = os.path.join(BASE_DIR,'static/js/').replace('\\','/')
+
+STATIC_JS = os.path.join(BASE_DIR,'static/js/').replace('\\','/')
+STATIC_CSS = os.path.join(BASE_DIR,'static/css/').replace('\\','/')
+STATIC_IMG = os.path.join(BASE_DIR,'static/images/').replace('\\','/')
+STATIC_FONTS = os.path.join(BASE_DIR,'static/images/').replace('\\','/')
 
 STATICFILES_DIRS = (
     ('js',os.path.join(STATIC_ROOT,'js') ),
@@ -104,6 +109,7 @@ STATICFILES_DIRS = (
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
+    # os.path.join(BASE_DIR,'apps/blog/templates')
 )
 
 # logging configuration

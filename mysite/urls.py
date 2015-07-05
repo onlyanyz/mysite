@@ -10,8 +10,11 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    # (r'^.*js/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_JS}),
-    # (r'^.*css/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_CSS}),
-    # (r'^.*images/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_IMG}),
-    # (r'^.*fonts/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_FONTS}),
+    (r'^.*js/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_JS}),
+    (r'^.*css/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_CSS}),
+    (r'^.*images/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_IMG}),
+    (r'^.*fonts/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_FONTS}),
+
+    url(r'^$','mysite.views.index'),
+    url(r'^home/$',include('apps.blog.urls')),
 )

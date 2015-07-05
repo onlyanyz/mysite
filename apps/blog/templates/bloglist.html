@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}博客列表{% endblock %}
+{% block content %}
+    <p>这是bloglist页面</p>
+    {% for blog in blogs %}
+        <h2>{{ blog.title }}</h2>
+        <p>{{ blog.timestamp|date:"Y-m-d h:m:s" }}</p>
+        <p>{{ blog.body }}</p>
+    {% endfor %}
+{% endblock %}
