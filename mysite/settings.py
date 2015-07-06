@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.blog',
+    'apps.gallery',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,15 +63,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME':'myDatabaseName',
-        # 'USER':'root',
-        # 'PASSWORD':'passwd',
-        # 'HOST':'127.0.0.1',
-        # 'PORT':'3306',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'mysitedb',
+        'USER':'root',
+        'PASSWORD':'123456',
+        'HOST':'127.0.0.1',
+        'PORT':'3306',
     }
 }
 
@@ -89,6 +90,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+# 从浏览器访问媒体资源时的地址前缀
+MEDIA_URL = '/media/'
+
+# media upload path,such as images and so on
+MEDIA_ROOT = os.path.join(BASE_DIR,'uploads')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/

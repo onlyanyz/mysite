@@ -1,5 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from django.conf.urls import patterns, include, url
 from django.conf import settings
+from django.conf.urls.static import static  # use to display media resources such as images
 
 from django.contrib import admin
 admin.autodiscover()
@@ -18,3 +22,7 @@ urlpatterns = patterns('',
     url(r'^$','mysite.views.index'),
     url(r'^home/$',include('apps.blog.urls')),
 )
+
+# 设置下面两行用于在管理界面点击图片地址时可以进行查看
+urlpatterns += patterns('',
+)+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
