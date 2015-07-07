@@ -105,7 +105,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_JS = os.path.join(BASE_DIR,'static/js/').replace('\\','/')
 STATIC_CSS = os.path.join(BASE_DIR,'static/css/').replace('\\','/')
 STATIC_IMG = os.path.join(BASE_DIR,'static/images/').replace('\\','/')
-STATIC_FONTS = os.path.join(BASE_DIR,'static/images/').replace('\\','/')
+STATIC_FONTS = os.path.join(BASE_DIR,'static/fonts/').replace('\\','/')
 
 STATICFILES_DIRS = (
     ('js',os.path.join(STATIC_ROOT,'js') ),
@@ -117,6 +117,10 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
     # os.path.join(BASE_DIR,'apps/blog/templates')
 )
+
+#Set the cookie expired time(in seconds)
+SESSION_COOKIE_AGE=86400
+SESSION_EXPIRE_AT_BROWSER_CLOSE=False
 
 # logging configuration
 LOGGING = {
