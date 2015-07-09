@@ -20,7 +20,9 @@ urlpatterns = patterns('',
     (r'^.*fonts/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_FONTS}),
 
     url(r'^$','mysite.views.index'),
-    url(r'^home/$',include('apps.blog.urls')),
+    url(r'^home/',include('apps.blog.urls')),
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+
 )
 
 # 设置下面两行用于在管理界面点击图片地址时可以进行查看
