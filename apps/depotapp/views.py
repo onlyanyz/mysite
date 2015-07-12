@@ -13,7 +13,7 @@ def create_product(request):
     if form.is_valid():
         form.save()
         form=ProductForm()
-    return render_to_response("create_product.html",context_instance=RequestContext(request))
+    return render_to_response("create_product.html",locals(),context_instance=RequestContext(request))
 
 def list_product(request):
     list_items=Product.objects.all()
@@ -27,7 +27,7 @@ def list_product(request):
         list_items=paginator.page(page)
     except:
         list_items=paginator.page(paginator.num_pages)
-    return render_to_response("list_product.html",context_instance=RequestContext(request))
+    return render_to_response("list_product.html",locals(),context_instance=RequestContext(request))
 
 def view_product(request,id):
     product_instance=Product.objects.get(id=id)

@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "base2.html" %}
+{% block title %}产品清单{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h2>产品清单</h2>
+    </div>
+    {% for item in list_items.object_list %}
+        <div class="row" style="padding-top: 10px">
+            <div class="col-md-3">
+                <a href="#">
+                    <img class="thumbnail" src="{{ item.image_url }}" alt="">
+                </a>
+            </div>
+            <div class="col-md-7">
+                <h4>{{ item.title }}</h4>
+                {{ item.description }}
+            </div>
+            <div class="col-md-2" style="align:right">
+                <p><a class="btn btn-primary" href="{% url 'apps.depotapp.views.view_product' item.id %}">查看</a> </p>
+                <p><a class="btn btn-success" href="{% url 'apps.depotapp.views.edit_product' item.id %}">编辑</a> </p>
+                <p><a class="btn btn-danger" href="#">删除</a></p>
+            </div>
+        </div>
+    {% endfor %}
+    {% if list_items.has_previous %}
+        <a href="?page={{ list_items.previous_page_number }}">上一页</a>
+    {% endif %}
+    <span class="current">
+        第{{ list_items.number }}页,共{{ list_items.paginator.num_pages }}页
+    </span>
+    {% if list_items.has_next %}
+        <a href="?page={{ list_items.next_page_number }}">下一页</a>
+    {% endif %}
+    <p>
+        <a href="{% url 'apps.depotapp.views.create_product' %}">新增产品</a>
+    </p>
+</div>
+{% endblock %}
