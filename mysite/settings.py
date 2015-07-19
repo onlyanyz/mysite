@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'apps.blog',
     'apps.gallery',
     'apps.depotapp',
@@ -122,6 +123,22 @@ TEMPLATE_DIRS = (
 #Set the cookie expired time(in seconds)
 SESSION_COOKIE_AGE=86400
 SESSION_EXPIRE_AT_BROWSER_CLOSE=False
+SESSION_COOKIE_NAME='sessionid'
+SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
+
+# restframework settings
+REST_FRAMEWORK={
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_MODEL_SERIALIZER_CLASS':'rest_framework.serializers.HyperlinkedModelSerializer',
+    'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.AllowAny','rest_framework.permissions.IsAdminUser',),
+    # 'DEFAULT_PERMISSION_CLASSES':'rest_framework.permissions.AllowAny',
+    'PAGINATE_BY': 10,
+    'PAGINATE_BY_PARAM': 'page_size',
+    'MAX_PAGINATE_BY': 100
+}
 
 # logging configuration
 LOGGING = {
