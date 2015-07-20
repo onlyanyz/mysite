@@ -16,4 +16,4 @@ __pycache__/
 *.idea/
 
 # Django stuff:
-*.log
+#*.log
