@@ -12,13 +12,14 @@ urlpatterns = patterns('',
     url(r'^cart/view/$',views.view_cart),
     url(r'^cart/add/(?P<id>[^/]+)/$',views.add_to_cart),
     url(r'^cart/clean/$',views.clean_cart),
-    # url(r'^api/cart/items',)
+
+    url(r'^api/cart/items',views.cart_item_list),
 )
 
-router=routers.DefaultRouter()
-router.register(r'cart',views.LineItemViewSet,base_name='depotapp')
+# router=routers.DefaultRouter()
+# router.register(r'cart',views.LineItemViewSet,base_name='depotapp')
 
-urlpatterns+=patterns('',
-    url(r'^',include(router.urls)),
-    # url(r'^api-auth/',include('rest_framework.urls',namespace='rest_framework'))
-)
+# urlpatterns+=patterns('',
+#     # url(r'^',include(router.urls)),
+#     # url(r'^api-auth/',include('rest_framework.urls',namespace='rest_framework'))
+# )

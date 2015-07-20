@@ -1,15 +1,34 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponse,HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt
 from django.core.paginator import Paginator
-from forms import ProductForm
-from models import Product,Cart,LineItem
 import datetime
 from rest_framework import viewsets
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
+from rest_framework.decorators import api_view
+from rest_framework import status
+from rest_framework.response import Response
+
 from serializers import LineItemSerializer
+from forms import ProductForm
+from models import Product,Cart,LineItem
 
 # Create your views here.
+
+class JSONResponse(HttpResponse):
+    """
+    An HttpResponse that renders its content into JSON.
+    """
+    def __init__(self, data, **kwargs):
+        content = JSONRenderer().render(data)
+        kwargs['content_type'] = 'application/json'
+        super(JSONResponse, self).__init__(content, **kwargs)
 
 def create_product(request):
     form=ProductForm(request.POST or None)
@@ -71,3 +90,22 @@ def clean_cart(request):
 class LineItemViewSet(viewsets.ModelViewSet):
     queryset = LineItem.objects.all()
     serializer_class = LineItemSerializer
+
+@api_view(['GET','POST'])
+def cart_item_list(request):
+    if request.method=='GET':
+        try:
+            lineitem=LineItem.objects.all()
+        except LineItem.DoesNotExist:
+            return HttpResponse(status=404)
+        serializer=LineItemSerializer(LineItem,many=True)
+        return JSONResponse(serializer.data)
+    elif request.method=='POST':
+        if not request.DATA:
+            errors={"errno":"-1","errmsg":"请求参数错误"}
+            return JSONResponse(errors,status=200)
+        serializer=LineItemSerializer(data=request.DATA,many=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data,status=status.HTTP_201_CREATED)
+        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
