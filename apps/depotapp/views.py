@@ -34,14 +34,14 @@ def list_product(request):
 
 def view_product(request,id):
     product_instance=Product.objects.get(id=id)
-    return render_to_response("view_product.html",context_instance=RequestContext(request))
+    return render_to_response("view_product.html",locals(),context_instance=RequestContext(request))
 
 def edit_product(request,id):
     product_instance=Product.objects.get(id=id)
     form=ProductForm(request.POST or None,instance=product_instance)
     if form.is_valid():
         form.save()
-    return render_to_response("edit_product.html",context_instance=RequestContext(request))
+    return render_to_response("edit_product.html",locals(),context_instance=RequestContext(request))
 
 def store_view(request):
     products=Product.objects.filter(date_available__gt=datetime.datetime.now().date()).order_by("-date_available")
