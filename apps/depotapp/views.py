@@ -15,7 +15,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
 
-from serializers import LineItemSerializer
+from serializers import LineItemSerializer,ProductSerializer
 from forms import ProductForm
 from models import Product,Cart,LineItem
 
@@ -87,25 +87,49 @@ def clean_cart(request):
     request.session["cart"]=Cart()
     return view_cart(request)
 
-class LineItemViewSet(viewsets.ModelViewSet):
-    queryset = LineItem.objects.all()
-    serializer_class = LineItemSerializer
+# class LineItemViewSet(viewsets.ModelViewSet):
+#     queryset = LineItem.objects.all()
+#     serializer_class = LineItemSerializer
 
 @api_view(['GET','POST'])
 def cart_item_list(request):
+    # if request.method=='GET':
+    #     try:
+    #         lineitem=LineItem.objects.all()
+    #     except LineItem.DoesNotExist:
+    #         return HttpResponse(status=404)
+    #     serializer=LineItemSerializer(lineitem,many=True)
+    #     return JSONResponse(serializer.data)
+    # elif request.method=='POST':
+    #     if not request.DATA:
+    #         errors={"errno":"-1","errmsg":"请求参数错误"}
+    #         return JSONResponse(errors,status=200)
+    #     serializer=LineItemSerializer(data=request.DATA,many=True)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data,status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     if request.method=='GET':
-        try:
-            lineitem=LineItem.objects.all()
-        except LineItem.DoesNotExist:
-            return HttpResponse(status=404)
-        serializer=LineItemSerializer(LineItem,many=True)
+        return JSONResponse(request.session['cart'].items)
+        # return JSONResponse({"errno":"-1","errmsg":"请求参数错误"})
+
+@api_view(['GET',])
+def product_list(request):
+    if request.method=='GET':
+        # if request.GET.has_key('pid'):
+        #     if request.GET['pid']<=0:
+        #         errors={"errno":"-1","errmsg":"请求参数错误"}
+        #         return JSONResponse(errors,status=200)
+        #     else:
+        #         try:
+        #             product=Product.objects.get(id=pid)
+        #         except Product.DoesNotExist:
+        #             return HttpResponse(status=404)
+        #         serializer=ProductSerializer(product,many=True)
+        if not request.GET.has_key('pid'):
+            try:
+                product=Product.objects.all()
+            except Product.DoesNotExist:
+                return HttpResponse(status=404)
+            serializer=ProductSerializer(product,many=True)
         return JSONResponse(serializer.data)
-    elif request.method=='POST':
-        if not request.DATA:
-            errors={"errno":"-1","errmsg":"请求参数错误"}
-            return JSONResponse(errors,status=200)
-        serializer=LineItemSerializer(data=request.DATA,many=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data,status=status.HTTP_201_CREATED)
-        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)

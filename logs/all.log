@@ -958,3 +958,623 @@ Traceback (most recent call last):
   File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
     self.child.to_representation(item) for item in iterable
 TypeError: 'ModelBase' object is not iterable
+[2015-07-21 09:59:32,298] WARNING : Not Found: /favicon.ico
+[2015-07-21 09:59:32,888] WARNING : Not Found: /depotapp/
+[2015-07-21 09:59:59,418] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 102, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+TypeError: 'ModelBase' object is not iterable
+[2015-07-21 13:06:29,154] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 102, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+TypeError: 'ModelBase' object is not iterable
+[2015-07-21 13:16:54,013] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 102, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 470, in data
+    ret = super(Serializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 317, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `unit_price` on serializer `LineItemSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'unit_price'.
+[2015-07-21 13:16:55,663] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 102, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 470, in data
+    ret = super(Serializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 317, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `unit_price` on serializer `LineItemSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'unit_price'.
+[2015-07-21 13:16:56,528] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 102, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 470, in data
+    ret = super(Serializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 317, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `unit_price` on serializer `LineItemSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'unit_price'.
+[2015-07-21 13:20:33,043] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    return request.session['cart'].items
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-21 13:21:11,213] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 458, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 378, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<type 'list'>`
+[2015-07-21 13:22:31,994] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 458, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 378, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<type 'list'>`
+[2015-07-21 13:22:37,170] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 458, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 378, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<type 'list'>`
+[2015-07-21 13:23:29,444] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 139, in get_response
+    response = response.render()
+  File "D:\Python27\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Python27\lib\site-packages\rest_framework\response.py", line 59, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 657, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 620, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 396, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "D:\Python27\lib\json\encoder.py", line 431, in _iterencode
+    for chunk in _iterencode_list(o, _current_indent_level):
+  File "D:\Python27\lib\json\encoder.py", line 332, in _iterencode_list
+    for chunk in chunks:
+  File "D:\Python27\lib\json\encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-21 13:23:29,716] WARNING : Not Found: /favicon.ico
+[2015-07-21 13:23:31,085] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 139, in get_response
+    response = response.render()
+  File "D:\Python27\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\Python27\lib\site-packages\rest_framework\response.py", line 59, in rendered_content
+    ret = renderer.render(self.data, media_type, context)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 657, in render
+    context = self.get_context(data, accepted_media_type, renderer_context)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 620, in get_context
+    'content': self.get_content(renderer, data, accepted_media_type, renderer_context),
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 396, in get_content
+    content = renderer.render(data, accepted_media_type, renderer_context)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 209, in encode
+    chunks = list(chunks)
+  File "D:\Python27\lib\json\encoder.py", line 431, in _iterencode
+    for chunk in _iterencode_list(o, _current_indent_level):
+  File "D:\Python27\lib\json\encoder.py", line 332, in _iterencode_list
+    for chunk in chunks:
+  File "D:\Python27\lib\json\encoder.py", line 442, in _iterencode
+    o = _default(o)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-21 16:48:01,625] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    return JSONResponse(request.session['cart'].items)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 29, in __init__
+    content = JSONRenderer().render(data)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-21 16:58:12,645] ERROR : Internal Server Error: /depotapp/api/product/list
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 123, in product_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 470, in data
+    ret = super(Serializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 317, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `title` on serializer `ProductSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'title'.
+[2015-07-21 17:16:23,723] ERROR : Internal Server Error: /depotapp/api/product/list
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+TypeError: product_list() takes exactly 2 arguments (1 given)
+[2015-07-21 17:16:26,660] ERROR : Internal Server Error: /depotapp/api/product/list
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+TypeError: product_list() takes exactly 2 arguments (1 given)
+[2015-07-21 17:16:45,895] ERROR : Internal Server Error: /depotapp/api/product/list
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+TypeError: product_list() takes exactly 2 arguments (1 given)
+[2015-07-21 17:17:22,536] ERROR : Internal Server Error: /depotapp/api/product/list
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 130, in product_list
+    product=Product.objects.get(id=pid)
+NameError: global name 'pid' is not defined
+[2015-07-21 17:18:29,755] WARNING : Not Found: /depotapp/api/product/list
+[2015-07-21 17:18:31,727] WARNING : Not Found: /depotapp/api/product/list
+[2015-07-21 17:26:08,496] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    return JSONResponse(request.session['cart'].items)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 29, in __init__
+    content = JSONRenderer().render(data)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-21 17:26:14,161] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    return JSONResponse(request.session['cart'].items)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 29, in __init__
+    content = JSONRenderer().render(data)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-21 17:26:15,125] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    return JSONResponse(request.session['cart'].items)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 29, in __init__
+    content = JSONRenderer().render(data)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-21 17:26:15,661] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    return JSONResponse(request.session['cart'].items)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 29, in __init__
+    content = JSONRenderer().render(data)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-21 17:26:16,023] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    return JSONResponse(request.session['cart'].items)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 29, in __init__
+    content = JSONRenderer().render(data)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-21 17:27:55,904] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    return JSONResponse(request.session['cart'].items)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 29, in __init__
+    content = JSONRenderer().render(data)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-21 17:31:58,622] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    # return JSONResponse(request.session['cart'].items)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 29, in __init__
+    content = JSONRenderer().render(data)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-21 22:11:03,288] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    return JSONResponse(request.session['cart'].items)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 29, in __init__
+    content = JSONRenderer().render(data)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable

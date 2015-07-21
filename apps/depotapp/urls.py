@@ -13,7 +13,8 @@ urlpatterns = patterns('',
     url(r'^cart/add/(?P<id>[^/]+)/$',views.add_to_cart),
     url(r'^cart/clean/$',views.clean_cart),
 
-    url(r'^api/cart/items',views.cart_item_list),
+    url(r'^api/cart/items/',views.cart_item_list),
+    url(r'api/product/list/',views.product_list),
 )
 
 # router=routers.DefaultRouter()
