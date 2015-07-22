@@ -1578,3 +1578,287 @@ Traceback (most recent call last):
   File "D:\Python27\lib\json\encoder.py", line 184, in default
     raise TypeError(repr(o) + " is not JSON serializable")
 TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-22 13:35:14,342] ERROR : Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',RESTforCart.as_view(resource=LineItemResource))
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 60, in as_view
+    "attributes of the class." % (cls.__name__, key))
+TypeError: RESTforCart() received an invalid keyword 'resource'. as_view only accepts arguments that are already attributes of the class.
+[2015-07-22 13:35:14,726] ERROR : Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',RESTforCart.as_view(resource=LineItemResource))
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 60, in as_view
+    "attributes of the class." % (cls.__name__, key))
+TypeError: RESTforCart() received an invalid keyword 'resource'. as_view only accepts arguments that are already attributes of the class.
+[2015-07-22 13:40:01,378] ERROR : Internal Server Error: /depotapp/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',RESTforCart.as_view(resource=LineItemResource))
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 60, in as_view
+    "attributes of the class." % (cls.__name__, key))
+TypeError: RESTforCart() received an invalid keyword 'resource'. as_view only accepts arguments that are already attributes of the class.
+[2015-07-22 13:40:01,598] ERROR : Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',RESTforCart.as_view(resource=LineItemResource))
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 60, in as_view
+    "attributes of the class." % (cls.__name__, key))
+TypeError: RESTforCart() received an invalid keyword 'resource'. as_view only accepts arguments that are already attributes of the class.
+[2015-07-22 13:40:05,351] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',RESTforCart.as_view(resource=LineItemResource))
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 60, in as_view
+    "attributes of the class." % (cls.__name__, key))
+TypeError: RESTforCart() received an invalid keyword 'resource'. as_view only accepts arguments that are already attributes of the class.
+[2015-07-22 13:40:05,539] ERROR : Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',RESTforCart.as_view(resource=LineItemResource))
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 60, in as_view
+    "attributes of the class." % (cls.__name__, key))
+TypeError: RESTforCart() received an invalid keyword 'resource'. as_view only accepts arguments that are already attributes of the class.
+[2015-07-22 13:41:30,394] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',RESTforCart.as_view(LineItemResource))
+TypeError: as_view() takes exactly 1 argument (2 given)
+[2015-07-22 13:41:30,539] ERROR : Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',RESTforCart.as_view(LineItemResource))
+TypeError: as_view() takes exactly 1 argument (2 given)
+[2015-07-22 13:41:31,740] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',RESTforCart.as_view(LineItemResource))
+TypeError: as_view() takes exactly 1 argument (2 given)
+[2015-07-22 13:41:31,877] ERROR : Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',RESTforCart.as_view(LineItemResource))
+TypeError: as_view() takes exactly 1 argument (2 given)
+[2015-07-22 13:43:06,480] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    return JSONResponse(request.session['cart'].items)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 30, in __init__
+    content = JSONRenderer().render(data)
+  File "D:\Python27\lib\site-packages\rest_framework\renderers.py", line 99, in render
+    separators=separators
+  File "D:\Python27\lib\json\__init__.py", line 250, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+  File "D:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "D:\Python27\lib\site-packages\rest_framework\utils\encoders.py", line 61, in default
+    return super(JSONEncoder, self).default(obj)
+  File "D:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <LineItem: LineItem object> is not JSON serializable
+[2015-07-22 13:43:06,734] WARNING : Not Found: /favicon.ico

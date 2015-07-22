@@ -15,6 +15,7 @@ urlpatterns = patterns('',
 
     url(r'^api/cart/items/',views.cart_item_list),
     url(r'api/product/list/',views.product_list),
+    # url(r'^api/cart/items/',RESTforCart.as_view(LineItemResource)),
 )
 
 # router=routers.DefaultRouter()
