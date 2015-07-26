@@ -125,6 +125,7 @@ SESSION_COOKIE_AGE=86400
 SESSION_EXPIRE_AT_BROWSER_CLOSE=False
 SESSION_COOKIE_NAME='sessionid'
 SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
+# ON_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
 
 # restframework settings
 REST_FRAMEWORK={

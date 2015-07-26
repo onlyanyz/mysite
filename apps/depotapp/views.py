@@ -15,6 +15,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import View
+import json
 
 from serializers import LineItemSerializer,ProductSerializer
 from forms import ProductForm
@@ -77,6 +78,7 @@ def view_cart(request):
 def add_to_cart(request,id):
     product=Product.objects.get(id=id)
     cart=request.session.get("cart",None)
+    request.session["my"]="123456"
     if not cart:
         cart=Cart()
         request.session["cart"]=cart
@@ -115,8 +117,10 @@ def cart_item_list(request):
     #         return Response(serializer.data,status=status.HTTP_201_CREATED)
     #     return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     if request.method=='GET':
-        # return JSONResponse(request.session['cart'].items)
-        return JSONResponse({"errno":"-1","errmsg":"请求参数错误"})
+        # serializer=json.dumps(request.session['cart'].items)
+        serializer={"product":1,"quantity":2,"unit_price":"1"}
+        return JSONResponse(serializer)
+        # return JSONResponse({"errno":"-1","errmsg":"请求参数错误"})
 
 @api_view(['GET',])
 def product_list(request):
