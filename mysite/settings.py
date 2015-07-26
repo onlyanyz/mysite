@@ -133,11 +133,14 @@ REST_FRAMEWORK={
         'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_MODEL_SERIALIZER_CLASS':'rest_framework.serializers.HyperlinkedModelSerializer',
-    'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.AllowAny','rest_framework.permissions.IsAdminUser',),
+    'DEFAULT_PERMISSION_CLASSES':(
+        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAdminUser',
+    ),
     # 'DEFAULT_PERMISSION_CLASSES':'rest_framework.permissions.AllowAny',
     'PAGINATE_BY': 10,
-    'PAGINATE_BY_PARAM': 'page_size',
-    'MAX_PAGINATE_BY': 100
+    # 'PAGINATE_BY_PARAM': 'page_size',
+    # 'MAX_PAGINATE_BY': 100
 }
 
 # logging configuration
