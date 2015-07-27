@@ -1,30 +1,112 @@
 {% extends "base2.html" %}
+{% block js %}
+    <script>
+        function refreshCart(items){
+            total=0;
+            var tbody=$('tbody#items')[0];
+            tbody.innerHTML = "";
+            for(var i=0;i<items.length;i++){
+                total+=items[i].quantity*items[i].unit_price;
+                $('table#tabCart').append('<tr><td>'+items[i].quantity+'x</td>'+
+                        '<td>'+items[i].product+'</td><td>￥'+items[i].unit_price+
+                        '</td></tr>');
+            }
+            $('#totalprice')[0].innerHTML = '$'+total;
+        }
+    </script>
+{% endblock %}
+{% block on_ready %}
+    $.getJSON('/depotapp/api/cart/items/',refreshCart);
+    $('a.btn[productid]').bind("click",function(){
+        var product_id=$(this).attr("productid");
+        $.post("/depotapp/api/cart/items/",
+        {product:product_id},
+{#        function(data){#}
+{#            alert(data);#}
+{#        });#}
+        refreshCart);
+    });
+{% endblock %}
 {% block title %}产品目录{% endblock %}
 {% block pagename %}产品目录{% endblock %}
 {% block content %}
-    {% for item in products %}
-        <div class="row" style="padding-top: 10">
-            <div class="col-md-3">
-                <a href="#">
-                    <img class="thumbnail" src="{{ item.image_url }}" alt="">
-                </a>
-            </div>
-            <div class="col-md-9">
-                <h3>{{ item.title }}</h3>
-                <br/>
-                {{ item.description }}
-                <br/>
-                <br/>
-                <br/>
-                <div class="row">
-                    <div class="span2">
-                        <h3>￥{{ item.price|floatformat:"2" }}</h3>
+    <div class="row">
+        <div class="col-md-10">
+            {% for item in products %}
+                <div class="row" style="padding-top: 10">
+                    <div class="col-md-3">
+                        <a href="#">
+                            <img class="thumbnail" src="{{ item.image_url }}" alt="">
+                        </a>
                     </div>
-                    <div class="span">
-                        <a class="btn btn-primary" href="{% url 'apps.depotapp.views.add_to_cart' item.id %}">加入购物车</a>
+                    <div class="col-md-9">
+                        <h3>{{ item.title }}</h3>
+                        <br/>
+                        {{ item.description }}
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h3>￥{{ item.price|floatformat:"2" }}</h3>
+                            </div>
+                            <div class="col-md-9">
+                                <br/>
+{#                                <a class="btn btn-primary" href="{% url 'apps.depotapp.views.add_to_cart' item.id %}">加入购物车</a>#}
+                                <a class="btn btn-primary" productid="{{ item.id }}" href="#">加入购物车</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="page-header">
+                </div>
+            {% endfor %}
+        </div><!-- col-md-10 -->
+        <div class="col-md-2">
+            <h5>我的购物车</h5>
+            <br/>
+{#            <table class="table table-condensed">#}
+{#                <tbody>#}
+{#                    {% for item in cart.items %}#}
+{#                        <tr>#}
+{#                            <th>{{ item.quantity }}</th>#}
+{#                            <td>{{ item.product.title }}</td>#}
+{#                            <td>￥{% widthratio item.quantity 1 item.unit_price %} </td>#}
+{#                        </tr>#}
+{#                    {% endfor %}#}
+{#                    <tr>#}
+{#                        <td></td>#}
+{#                        <th>总计：</th>#}
+{#                        <th>￥{{cart.total_price|floatformat:"2"}}</th>#}
+{#                    </tr>#}
+{#                </tbody>#}
+{#            </table>#}
+            <table id="tabCart" class="table table-condensed">
+                <tbody id="items">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <th>总计：</th>
+                        <td id="totalprice">￥{{cart.total_price|floatformat:"2"}}</td>
+                    </tr>
+                </tfoot>
+{#                    {% for item in cart.items %}#}
+{#                        <tr>#}
+{#                            <th>{{ item.quantity }}</th>#}
+{#                            <td>{{ item.product.title }}</td>#}
+{#                            <td>￥{% widthratio item.quantity 1 item.unit_price %} </td>#}
+{#                        </tr>#}
+{#                    {% endfor %}#}
+{#                    <tr>#}
+{#                        <td></td>#}
+{#                        <th>总计：</th>#}
+{#                        <th>￥{{cart.total_price|floatformat:"2"}}</th>#}
+{#                    </tr>#}
+            </table>
+            <a class="btn btn-danger" href="{% url 'apps.depotapp.views.clean_cart' %}">清空</a>
+            <a class="btn btn-success" href="{% url 'apps.depotapp.views.create_order' %}">结算</a>
         </div>
-    {% endfor %}
+    </div><!-- row -->
+
 {% endblock %}

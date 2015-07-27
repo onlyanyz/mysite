@@ -1,0 +1,18 @@
+{% extends "base2.html" %}
+{% block title %}创建订单{% endblock %}
+{% block pagename %}
+    创建订单
+{% endblock %}
+{% block content %}
+    <table>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="submit" value="创建"/>
+                </td>
+            </tr>
+        </form>
+    </table>
+{% endblock %}

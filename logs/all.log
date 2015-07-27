@@ -2064,3 +2064,1434 @@ Traceback (most recent call last):
     raise TypeError(repr(o) + " is not JSON serializable")
 TypeError: <LineItem: LineItem object> is not JSON serializable
 [2015-07-26 20:28:30,575] WARNING : Not Found: /favicon.ico
+[2015-07-27 10:17:41,750] WARNING : Not Found: /depotapp/
+[2015-07-27 10:17:41,841] WARNING : Not Found: /favicon.ico
+[2015-07-27 11:06:49,234] ERROR : Internal Server Error: /depotapp/store/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 69, in store_view
+    return render_to_response("store.html",locals(),context_instance=RequestContext(request))
+  File "D:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 29, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "D:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    return t.render(context_instance)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 140, in render
+    return self._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\defaulttags.py", line 424, in render
+    raise NoReverseMatch("'url' requires a non-empty first argument. "
+NoReverseMatch: 'url' requires a non-empty first argument. The syntax changed in Django 1.5, see the docs.
+[2015-07-27 15:22:13,503] ERROR : Internal Server Error: /depotapp/cart/view/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: add_to_cart() takes exactly 2 arguments (1 given)
+[2015-07-27 15:23:16,184] WARNING : Not Found: /depotapp/cart/view/
+[2015-07-27 15:24:08,766] WARNING : Not Found: /depotapp/cart/view/3/
+[2015-07-27 15:49:55,940] WARNING : Not Found: /cart/view/
+[2015-07-27 15:50:09,312] WARNING : Not Found: /depotapp/cart/add/1/depotapp/cart/view/
+[2015-07-27 15:53:30,447] ERROR : Internal Server Error: /depotapp/cart/add/1/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'function' object has no attribute 'get'
+[2015-07-27 15:53:57,707] ERROR : Internal Server Error: /depotapp/cart/add/1/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 87, in add_to_cart
+    return view_cart()
+TypeError: view_cart() takes exactly 1 argument (0 given)
+[2015-07-27 16:17:51,091] ERROR : Internal Server Error: /depotapp/cart/add/1/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 85, in add_to_cart
+    cart.add_product(product)
+  File "D:\workspace\mysite\apps\depotapp\models.py", line 31, in add_product
+    return self.items.append(LineItem(product=product,unit_price=product.price,quantity=item.quantity))
+UnboundLocalError: local variable 'item' referenced before assignment
+[2015-07-27 17:24:36,197] ERROR : Internal Server Error: /depotapp/api/product/list/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 145, in product_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 317, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `quantity` on serializer `ProductSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Product` instance.
+Original exception text was: 'Product' object has no attribute 'quantity'.
+[2015-07-27 17:25:46,627] ERROR : Internal Server Error: /depotapp/api/product/list/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 145, in product_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 317, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `quantity` on serializer `ProductSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Product` instance.
+Original exception text was: 'Product' object has no attribute 'quantity'.
+[2015-07-27 17:25:47,920] ERROR : Internal Server Error: /depotapp/api/product/list/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 145, in product_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 317, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `quantity` on serializer `ProductSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Product` instance.
+Original exception text was: 'Product' object has no attribute 'quantity'.
+[2015-07-27 17:25:48,861] ERROR : Internal Server Error: /depotapp/api/product/list/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 145, in product_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 317, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `quantity` on serializer `ProductSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Product` instance.
+Original exception text was: 'Product' object has no attribute 'quantity'.
+[2015-07-27 17:25:49,418] ERROR : Internal Server Error: /depotapp/api/product/list/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 145, in product_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 317, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `quantity` on serializer `ProductSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Product` instance.
+Original exception text was: 'Product' object has no attribute 'quantity'.
+[2015-07-27 17:25:57,194] ERROR : Internal Server Error: /depotapp/api/product/list/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 145, in product_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 317, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `quantity` on serializer `ProductSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Product` instance.
+Original exception text was: 'Product' object has no attribute 'quantity'.
+[2015-07-27 17:26:09,914] ERROR : Internal Server Error: /depotapp/api/product/list/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 145, in product_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 439, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 423, in to_representation
+    cls=self.__class__.__name__
+NotImplementedError: Field.to_representation() must be implemented.
+If you are upgrading from REST framework version 2 you might want `ReadOnlyField`.
+[2015-07-27 17:26:20,447] ERROR : Internal Server Error: /depotapp/api/product/list/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 145, in product_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 439, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 423, in to_representation
+    cls=self.__class__.__name__
+NotImplementedError: Field.to_representation() must be implemented.
+If you are upgrading from REST framework version 2 you might want `ReadOnlyField`.
+[2015-07-27 17:57:10,088] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 19, in <module>
+    url(r'^api/cart/items/',views.RESTforCart.as_view(serializer=LineItemSerializer)),
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 60, in as_view
+    "attributes of the class." % (cls.__name__, key))
+TypeError: RESTforCart() received an invalid keyword 'serializer'. as_view only accepts arguments that are already attributes of the class.
+[2015-07-27 17:58:25,954] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 72, in process_request
+    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 223, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 230, in callback
+    self._callback = get_callable(self._callback_str)
+  File "D:\Python27\lib\site-packages\django\utils\functional.py", line 32, in wrapper
+    result = func(*args)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 92, in get_callable
+    mod_name, func_name = get_mod_func(lookup_view)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 142, in get_mod_func
+    dot = callback.rindex('.')
+AttributeError: 'RESTforCart' object has no attribute 'rindex'
+[2015-07-27 17:58:27,259] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 72, in process_request
+    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 223, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 230, in callback
+    self._callback = get_callable(self._callback_str)
+  File "D:\Python27\lib\site-packages\django\utils\functional.py", line 32, in wrapper
+    result = func(*args)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 92, in get_callable
+    mod_name, func_name = get_mod_func(lookup_view)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 142, in get_mod_func
+    dot = callback.rindex('.')
+AttributeError: 'RESTforCart' object has no attribute 'rindex'
+[2015-07-27 17:58:28,414] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 72, in process_request
+    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 223, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 230, in callback
+    self._callback = get_callable(self._callback_str)
+  File "D:\Python27\lib\site-packages\django\utils\functional.py", line 32, in wrapper
+    result = func(*args)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 92, in get_callable
+    mod_name, func_name = get_mod_func(lookup_view)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 142, in get_mod_func
+    dot = callback.rindex('.')
+AttributeError: 'RESTforCart' object has no attribute 'rindex'
+[2015-07-27 17:59:10,055] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 72, in process_request
+    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 223, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 230, in callback
+    self._callback = get_callable(self._callback_str)
+  File "D:\Python27\lib\site-packages\django\utils\functional.py", line 32, in wrapper
+    result = func(*args)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 92, in get_callable
+    mod_name, func_name = get_mod_func(lookup_view)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 142, in get_mod_func
+    dot = callback.rindex('.')
+AttributeError: 'RESTforCart' object has no attribute 'rindex'
+[2015-07-27 17:59:11,017] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 72, in process_request
+    urlresolvers.is_valid_path("%s/" % request.path_info, urlconf)):
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 223, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 230, in callback
+    self._callback = get_callable(self._callback_str)
+  File "D:\Python27\lib\site-packages\django\utils\functional.py", line 32, in wrapper
+    result = func(*args)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 92, in get_callable
+    mod_name, func_name = get_mod_func(lookup_view)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 142, in get_mod_func
+    dot = callback.rindex('.')
+AttributeError: 'RESTforCart' object has no attribute 'rindex'
+[2015-07-27 18:09:59,098] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',views.RESTforCart.as_view(resource=LineItemResource)),
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 60, in as_view
+    "attributes of the class." % (cls.__name__, key))
+TypeError: RESTforCart() received an invalid keyword 'resource'. as_view only accepts arguments that are already attributes of the class.
+[2015-07-27 18:10:49,750] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',views.RESTforCart.as_view(serializer=LineItemResource)),
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 60, in as_view
+    "attributes of the class." % (cls.__name__, key))
+TypeError: RESTforCart() received an invalid keyword 'serializer'. as_view only accepts arguments that are already attributes of the class.
+[2015-07-27 18:10:51,058] ERROR : Internal Server Error: /depotapp/api/cart/items
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 90, in get_response
+    response = middleware_method(request)
+  File "D:\Python27\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 596, in is_valid_path
+    resolve(path, urlconf)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 476, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',views.RESTforCart.as_view(serializer=LineItemResource)),
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 60, in as_view
+    "attributes of the class." % (cls.__name__, key))
+TypeError: RESTforCart() received an invalid keyword 'serializer'. as_view only accepts arguments that are already attributes of the class.
+[2015-07-27 18:11:50,142] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:11:52,255] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:13:03,697] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 20, in <module>
+    url(r'^api/cart/items/',views.RESTforCart.as_view(serializer=LineItemResource)),
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 60, in as_view
+    "attributes of the class." % (cls.__name__, key))
+TypeError: RESTforCart() received an invalid keyword 'serializer'. as_view only accepts arguments that are already attributes of the class.
+[2015-07-27 18:23:24,584] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: __init__() takes exactly 1 argument (2 given)
+[2015-07-27 18:23:25,871] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: __init__() takes exactly 1 argument (2 given)
+[2015-07-27 18:23:56,109] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: __init__() takes exactly 1 argument (2 given)
+[2015-07-27 18:23:57,339] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: __init__() takes exactly 1 argument (2 given)
+[2015-07-27 18:24:11,951] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 223, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 230, in callback
+    self._callback = get_callable(self._callback_str)
+  File "D:\Python27\lib\site-packages\django\utils\functional.py", line 32, in wrapper
+    result = func(*args)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 92, in get_callable
+    mod_name, func_name = get_mod_func(lookup_view)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 142, in get_mod_func
+    dot = callback.rindex('.')
+AttributeError: 'RESTforCart' object has no attribute 'rindex'
+[2015-07-27 18:24:13,285] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 223, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 230, in callback
+    self._callback = get_callable(self._callback_str)
+  File "D:\Python27\lib\site-packages\django\utils\functional.py", line 32, in wrapper
+    result = func(*args)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 92, in get_callable
+    mod_name, func_name = get_mod_func(lookup_view)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 142, in get_mod_func
+    dot = callback.rindex('.')
+AttributeError: 'RESTforCart' object has no attribute 'rindex'
+[2015-07-27 18:24:34,184] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: as_view() takes exactly 1 argument (2 given)
+[2015-07-27 18:24:35,154] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: as_view() takes exactly 1 argument (2 given)
+[2015-07-27 18:24:40,124] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:24:41,641] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:24:46,072] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:28:52,546] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:28:53,467] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:46:25,746] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:47:20,904] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:47:23,243] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:47:35,940] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:47:37,073] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:47:45,519] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:48:15,542] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:49:07,437] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:49:31,273] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:49:46,776] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:49:51,572] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:50:18,742] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:53:56,365] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:53:57,319] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:53:58,904] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:54:39,480] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:54:40,499] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:55:20,213] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:55:21,609] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:55:30,108] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:55:30,969] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:55:33,378] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 201, in get_response
+    response = middleware_method(request, response)
+  File "D:\Python27\lib\site-packages\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'list' object has no attribute 'get'
+[2015-07-27 18:56:15,002] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 458, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 378, in finalize_response
+    % type(response)
+AssertionError: Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<type 'NoneType'>`
+[2015-07-27 18:56:41,394] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    print serializer.data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+TypeError: 'Cart' object is not iterable
+[2015-07-27 19:00:48,322] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 113, in cart_item_list
+    print serializer.data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+TypeError: 'Cart' object is not iterable
+[2015-07-27 19:08:23,779] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 4, in <module>
+    import views
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 20, in <module>
+    from serializers import LineItemSerializer,ProductSerializer
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 9, in <module>
+    class LineItemSerializer(serializers.Serializer):
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 12, in LineItemSerializer
+    product=product()
+TypeError: product() takes exactly 2 arguments (0 given)
+[2015-07-27 19:08:25,848] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 4, in <module>
+    import views
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 20, in <module>
+    from serializers import LineItemSerializer,ProductSerializer
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 9, in <module>
+    class LineItemSerializer(serializers.Serializer):
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 12, in LineItemSerializer
+    product=product()
+TypeError: product() takes exactly 2 arguments (0 given)
+[2015-07-27 19:08:45,015] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 4, in <module>
+    import views
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 20, in <module>
+    from serializers import LineItemSerializer,ProductSerializer
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 9, in <module>
+    class LineItemSerializer(serializers.Serializer):
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 12, in LineItemSerializer
+    product=product(instance=product)
+TypeError: product() takes exactly 2 arguments (1 given)
+[2015-07-27 19:08:46,137] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 4, in <module>
+    import views
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 20, in <module>
+    from serializers import LineItemSerializer,ProductSerializer
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 9, in <module>
+    class LineItemSerializer(serializers.Serializer):
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 12, in LineItemSerializer
+    product=product(instance=product)
+TypeError: product() takes exactly 2 arguments (1 given)
+[2015-07-27 19:08:46,868] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 4, in <module>
+    import views
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 20, in <module>
+    from serializers import LineItemSerializer,ProductSerializer
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 9, in <module>
+    class LineItemSerializer(serializers.Serializer):
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 12, in LineItemSerializer
+    product=product(instance=product)
+TypeError: product() takes exactly 2 arguments (1 given)
+[2015-07-27 19:12:51,424] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 4, in <module>
+    import views
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 20, in <module>
+    from serializers import LineItemSerializer,ProductSerializer
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 9, in <module>
+    class LineItemSerializer(serializers.Serializer):
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 12, in LineItemSerializer
+    product=serializers.CharField(product())
+TypeError: product() takes exactly 2 arguments (0 given)
+[2015-07-27 19:12:52,706] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 4, in <module>
+    import views
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 20, in <module>
+    from serializers import LineItemSerializer,ProductSerializer
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 9, in <module>
+    class LineItemSerializer(serializers.Serializer):
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 12, in LineItemSerializer
+    product=serializers.CharField(product())
+TypeError: product() takes exactly 2 arguments (0 given)
+[2015-07-27 19:17:01,582] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 101, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 365, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 360, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\mysite\urls.py", line 24, in <module>
+    url(r'^depotapp/',include('apps.depotapp.urls')),
+  File "D:\Python27\lib\site-packages\django\conf\urls\__init__.py", line 26, in include
+    urlconf_module = import_module(urlconf_module)
+  File "D:\Python27\lib\site-packages\django\utils\importlib.py", line 40, in import_module
+    __import__(name)
+  File "D:\workspace\mysite\apps\depotapp\urls.py", line 4, in <module>
+    import views
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 20, in <module>
+    from serializers import LineItemSerializer,ProductSerializer
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 9, in <module>
+    class LineItemSerializer(serializers.Serializer):
+  File "D:\workspace\mysite\apps\depotapp\serializers.py", line 12, in LineItemSerializer
+    product=Product.title
+AttributeError: type object 'Product' has no attribute 'title'
+[2015-07-27 21:53:55,717] ERROR : Internal Server Error: /depotapp/store/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 70, in store_view
+    return render_to_response("store.html",locals(),context_instance=RequestContext(request))
+  File "D:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 29, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "D:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    return t.render(context_instance)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 140, in render
+    return self._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\defaulttags.py", line 447, in render
+    six.reraise(*exc_info)
+  File "D:\Python27\lib\site-packages\django\template\defaulttags.py", line 433, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 532, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 452, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'apps.depotapp.views.create_order' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+[2015-07-27 22:15:30,283] WARNING : Not Found: /store
+[2015-07-27 22:15:37,194] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 112, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\relations.py", line 103, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 71, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 305, in __get__
+    val = self.field.get_local_related_value(instance)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 997, in get_local_related_value
+    return self.get_instance_value_for_fields(instance, self.local_related_fields)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 1012, in get_instance_value_for_fields
+    ret.append(getattr(instance, field.attname))
+AttributeError: 'LineItem' object has no attribute 'order_id'
+[2015-07-27 22:15:40,322] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 123, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\relations.py", line 103, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 71, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 305, in __get__
+    val = self.field.get_local_related_value(instance)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 997, in get_local_related_value
+    return self.get_instance_value_for_fields(instance, self.local_related_fields)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 1012, in get_instance_value_for_fields
+    ret.append(getattr(instance, field.attname))
+AttributeError: 'LineItem' object has no attribute 'order_id'
+[2015-07-27 22:15:43,391] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 123, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\relations.py", line 103, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 71, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 305, in __get__
+    val = self.field.get_local_related_value(instance)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 997, in get_local_related_value
+    return self.get_instance_value_for_fields(instance, self.local_related_fields)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 1012, in get_instance_value_for_fields
+    ret.append(getattr(instance, field.attname))
+AttributeError: 'LineItem' object has no attribute 'order_id'
+[2015-07-27 22:15:44,197] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 123, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\relations.py", line 103, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 71, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 305, in __get__
+    val = self.field.get_local_related_value(instance)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 997, in get_local_related_value
+    return self.get_instance_value_for_fields(instance, self.local_related_fields)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 1012, in get_instance_value_for_fields
+    ret.append(getattr(instance, field.attname))
+AttributeError: 'LineItem' object has no attribute 'order_id'
+[2015-07-27 22:15:44,447] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 123, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\relations.py", line 103, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 71, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 305, in __get__
+    val = self.field.get_local_related_value(instance)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 997, in get_local_related_value
+    return self.get_instance_value_for_fields(instance, self.local_related_fields)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 1012, in get_instance_value_for_fields
+    ret.append(getattr(instance, field.attname))
+AttributeError: 'LineItem' object has no attribute 'order_id'
+[2015-07-27 22:16:24,321] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 123, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\relations.py", line 103, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 71, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 305, in __get__
+    val = self.field.get_local_related_value(instance)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 997, in get_local_related_value
+    return self.get_instance_value_for_fields(instance, self.local_related_fields)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 1012, in get_instance_value_for_fields
+    ret.append(getattr(instance, field.attname))
+AttributeError: 'LineItem' object has no attribute 'order_id'
+[2015-07-27 22:16:25,447] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 123, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\relations.py", line 103, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 71, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 305, in __get__
+    val = self.field.get_local_related_value(instance)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 997, in get_local_related_value
+    return self.get_instance_value_for_fields(instance, self.local_related_fields)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 1012, in get_instance_value_for_fields
+    ret.append(getattr(instance, field.attname))
+AttributeError: 'LineItem' object has no attribute 'order_id'
+[2015-07-27 22:16:26,503] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 123, in cart_item_list
+    return JSONResponse(serializer.data)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 622, in data
+    ret = super(ListSerializer, self).data
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 217, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 572, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "D:\Python27\lib\site-packages\rest_framework\serializers.py", line 430, in to_representation
+    attribute = field.get_attribute(instance)
+  File "D:\Python27\lib\site-packages\rest_framework\relations.py", line 103, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "D:\Python27\lib\site-packages\rest_framework\fields.py", line 71, in get_attribute
+    instance = getattr(instance, attr)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 305, in __get__
+    val = self.field.get_local_related_value(instance)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 997, in get_local_related_value
+    return self.get_instance_value_for_fields(instance, self.local_related_fields)
+  File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 1012, in get_instance_value_for_fields
+    ret.append(getattr(instance, field.attname))
+AttributeError: 'LineItem' object has no attribute 'order_id'

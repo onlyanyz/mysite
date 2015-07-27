@@ -14,11 +14,12 @@ from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.views import View
+from rest_framework.views import View,APIView
 import json
+from django.db import transaction
 
 from serializers import LineItemSerializer,ProductSerializer
-from forms import ProductForm
+from forms import ProductForm,OrderForm
 from models import Product,Cart,LineItem
 
 # Create your views here.
@@ -66,6 +67,7 @@ def edit_product(request,id):
 
 def store_view(request):
     products=Product.objects.filter(date_available__gt=datetime.datetime.now().date()).order_by("-date_available")
+    cart = request.session.get("cart",None)
     return render_to_response("store.html",locals(),context_instance=RequestContext(request))
 
 def view_cart(request):
@@ -78,13 +80,13 @@ def view_cart(request):
 def add_to_cart(request,id):
     product=Product.objects.get(id=id)
     cart=request.session.get("cart",None)
-    request.session["my"]="123456"
     if not cart:
         cart=Cart()
         request.session["cart"]=cart
     cart.add_product(product)
     request.session["cart"]=cart
-    return view_cart(request)
+    # return view_cart(request)
+    return HttpResponseRedirect("/depotapp/cart/view/")
 
 def clean_cart(request):
     request.session["cart"]=Cart()
@@ -98,8 +100,28 @@ def clean_cart(request):
 #     def get(self,request,*args,**kwargs):
 #         return request.session['cart'].items
 
+class RESTforCart(View):
+    def get(self,request,*args,**kwargs):
+        return request.session['cart'].items
+
 @api_view(['GET','POST'])
-def cart_item_list(request):
+def cart_item_list(request,*args,**kwargs):
+    if request.method=='GET':
+        carts=request.session["cart"].items
+        serializer=LineItemSerializer(carts,many=True)
+        return JSONResponse(serializer.data)
+    elif request.method=='POST':
+        if not request.DATA:
+            errors={"errno":"-1","errmsg":"请求参数错误"}
+            return JSONResponse(errors,status=200)
+        product=Product.objects.get(id=request.POST['product'])
+        cart=request.session['cart']
+        cart.add_product(product)
+        request.session['cart']=cart
+        carts=request.session["cart"].items
+        serializer=LineItemSerializer(carts,many=True)
+        return JSONResponse(serializer.data)
+
     # if request.method=='GET':
     #     try:
     #         lineitem=LineItem.objects.all()
@@ -116,11 +138,11 @@ def cart_item_list(request):
     #         serializer.save()
     #         return Response(serializer.data,status=status.HTTP_201_CREATED)
     #     return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
-    if request.method=='GET':
-        # serializer=json.dumps(request.session['cart'].items)
-        serializer={"product":1,"quantity":2,"unit_price":"1"}
-        return JSONResponse(serializer)
+    # if request.method=='GET':
+        # serializer={"product":1,"quantity":2,"unit_price":"1"}
+        # return JSONResponse(serializer)
         # return JSONResponse({"errno":"-1","errmsg":"请求参数错误"})
+
 
 @api_view(['GET',])
 def product_list(request):
@@ -142,3 +164,15 @@ def product_list(request):
                 return HttpResponse(status=404)
             serializer=ProductSerializer(product,many=True)
         return JSONResponse(serializer.data)
+
+@transaction.commit_on_success
+def create_order(request):
+    form=OrderForm(request.POST or None)
+    # if form.is_valid():
+    #     order=form.save()
+    #     for item in request.session['cart'].items:
+    #         item.order=order
+    #         item.save()
+    #         clean_cart(request)
+    #         return store_view(request)
+    return render_to_response("create_order.html",locals(),context_instance=RequestContext(request))

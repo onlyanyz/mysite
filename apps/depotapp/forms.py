@@ -3,7 +3,7 @@
 
 from django import forms
 import itertools
-from models import Product
+from models import Product,Order
 
 def anyTrue(predicate,sequence):
     return True in itertools.imap(predicate,sequence)
@@ -29,3 +29,7 @@ class ProductForm(forms.ModelForm):
         if not endsWith(url,'.jpg','.png','.gif'):
             raise forms.ValidationError("图片格式必须为jpg、png或gif")
         return url
+
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model=Order
