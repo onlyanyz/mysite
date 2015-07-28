@@ -3495,3 +3495,9 @@ Traceback (most recent call last):
   File "D:\Python27\lib\site-packages\django\db\models\fields\related.py", line 1012, in get_instance_value_for_fields
     ret.append(getattr(instance, field.attname))
 AttributeError: 'LineItem' object has no attribute 'order_id'
+[2015-07-28 13:09:33,917] WARNING : Not Found: /favicon.ico
+[2015-07-28 13:20:05,911] ERROR : Internal Server Error: /depotapp/order/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view apps.depotapp.views.create_order didn't return an HttpResponse object.

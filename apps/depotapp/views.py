@@ -168,11 +168,11 @@ def product_list(request):
 @transaction.commit_on_success
 def create_order(request):
     form=OrderForm(request.POST or None)
-    # if form.is_valid():
-    #     order=form.save()
-    #     for item in request.session['cart'].items:
-    #         item.order=order
-    #         item.save()
-    #         clean_cart(request)
-    #         return store_view(request)
+    if form.is_valid():
+        order=form.save()
+        for item in request.session['cart'].items:
+            item.order=order
+            item.save()
+        clean_cart(request)
+    # return store_view(request)
     return render_to_response("create_order.html",locals(),context_instance=RequestContext(request))
