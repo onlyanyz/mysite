@@ -3501,3 +3501,392 @@ Traceback (most recent call last):
   File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
     raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
 ValueError: The view apps.depotapp.views.create_order didn't return an HttpResponse object.
+[2015-07-28 23:15:27,089] WARNING : Not Found: /favicon.ico
+[2015-07-28 23:15:28,545] WARNING : Not Found: /favicon.ico
+[2015-07-28 23:15:38,403] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 110, in cart_item_list
+    carts=request.session["cart"].items
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:15:43,765] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 110, in cart_item_list
+    carts=request.session["cart"].items
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:15:45,118] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 110, in cart_item_list
+    carts=request.session["cart"].items
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:15:47,471] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:15:50,269] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 110, in cart_item_list
+    carts=request.session["cart"].items
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:15:53,851] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 110, in cart_item_list
+    carts=request.session["cart"].items
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:15:58,558] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:15:59,516] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:16:00,101] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:16:00,309] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:16:00,515] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:16:02,890] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:16:04,441] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:16:05,125] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:16:05,737] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:16:06,029] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:16:06,420] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:16:07,286] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 118, in cart_item_list
+    cart=request.session['cart']
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:16:19,460] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 110, in cart_item_list
+    carts=request.session["cart"].items
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:18:00,076] ERROR : Internal Server Error: /depotapp/api/cart/items/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python27\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\Python27\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 456, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\Python27\lib\site-packages\rest_framework\views.py", line 453, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Python27\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\workspace\mysite\apps\depotapp\views.py", line 110, in cart_item_list
+    carts=request.session["cart"].items
+  File "D:\Python27\lib\site-packages\django\contrib\sessions\backends\base.py", line 47, in __getitem__
+    return self._session[key]
+KeyError: 'cart'
+[2015-07-28 23:25:33,227] WARNING : Not Found: /favicon.ico
+[2015-07-28 23:51:56,950] WARNING : Not Found: /favicon.ico
+[2015-07-29 00:21:54,122] WARNING : Not Found: /favicon.ico
+[2015-07-29 00:22:08,473] WARNING : Forbidden (CSRF token missing or incorrect.): /account/login/
+[2015-07-29 00:23:06,395] WARNING : Forbidden (CSRF token missing or incorrect.): /account/login/
+[2015-07-29 00:27:43,323] WARNING : Not Found: /accounts/login/
+[2015-07-29 00:27:57,306] WARNING : Not Found: /accounts/login/

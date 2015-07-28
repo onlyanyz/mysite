@@ -17,6 +17,8 @@ from rest_framework.response import Response
 from rest_framework.views import View,APIView
 import json
 from django.db import transaction
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
 
 from serializers import LineItemSerializer,ProductSerializer
 from forms import ProductForm,OrderForm
@@ -40,6 +42,7 @@ def create_product(request):
         form=ProductForm()
     return render_to_response("create_product.html",locals(),context_instance=RequestContext(request))
 
+@login_required
 def list_product(request):
     list_items=Product.objects.all()
     paginator=Paginator(list_items,10)
@@ -107,7 +110,11 @@ class RESTforCart(View):
 @api_view(['GET','POST'])
 def cart_item_list(request,*args,**kwargs):
     if request.method=='GET':
-        carts=request.session["cart"].items
+        try:
+            carts=request.session["cart"].items
+        except KeyError:
+            request.session["cart"]=Cart()
+            carts=request.session["cart"].items
         serializer=LineItemSerializer(carts,many=True)
         return JSONResponse(serializer.data)
     elif request.method=='POST':
@@ -176,3 +183,20 @@ def create_order(request):
         clean_cart(request)
     # return store_view(request)
     return render_to_response("create_order.html",locals(),context_instance=RequestContext(request))
+
+def atom_of_order(request,id):
+    product=Product.objects.get(id=id)
+    return render_to_response("atom_order.xml",locals(),context_instance=RequestContext(request),mimetype='application/atom+xml')
+
+def login_view(request):
+    user=authenticate(username=request.POST['username'],password=request.POST['password'])
+    if user is not None:
+        login(request,user)
+        print request.user
+        return list_product(request)
+    else:
+        return store_view(request)
+
+def logout_view(request):
+    logout(request)
+    return store_view(request)

@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^cart/add/(?P<id>[^/]+)/$',views.add_to_cart),
     url(r'^cart/clean/$',views.clean_cart),
     url(r'^order/$',views.create_order),
+    url(r'^product/(?P<id>[^/]+)/who_bought/$',views.atom_of_order),
 
     url(r'^api/cart/items/',views.cart_item_list),
     url(r'api/product/list/',views.product_list),
