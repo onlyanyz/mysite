@@ -21,10 +21,52 @@
     </title>
 </head>
 <body>
-    <div class="navbar navbar-default">
-        <div class="fill">
-            <div class="container">
+{#    <nav class="navbar navbar-inverse navbar-fixed-top">#}
+{#        <div class="fill">#}
+{#            <div class="container">#}
 {#                <a class="brand" href="#">Depot</a>#}
+{#                <ul class="nav navbar-nav">#}
+{#                    <li class="active">#}
+{#                        <a href="#">首页</a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#about">问题</a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#news">新闻</a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#contact">联系我们</a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#                {% if request.user.is_authenticated %}#}
+{#                    <div class="pull-right">#}
+{#                        <a href="#">欢迎您:{{ request.user }}</a>#}
+{#                        <a class="btn btn-danger small" href="{% url 'apps.depotapp.views.logout_view' %}">注销</a>#}
+{#                    </div>#}
+{#                {% else %}#}
+{#                    <form action="{% url 'apps.depotapp.views.login_view' %}" method="post" class="pull-right">#}
+{#                        {% csrf_token %}#}
+{#                        <input name="username" class="input-small" type="text" placeholder="用户名">#}
+{#                        <input name='password' class="input-small" type="password" placeholder="密码">#}
+{#                        <button class="btn" type="submit">登录</button>#}
+{#                    </form>#}
+{#                {% endif %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </nav>#}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">购物车</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
                         <a href="#">首页</a>
@@ -45,20 +87,32 @@
                         <a class="btn btn-danger small" href="{% url 'apps.depotapp.views.logout_view' %}">注销</a>
                     </div>
                 {% else %}
-                    <form action="{% url 'apps.depotapp.views.login_view' %}" method="post" class="pull-right">
-                        {% csrf_token %}
-                        <input name="username" class="input-small" type="text" placeholder="用户名">
-                        <input name='password' class="input-small" type="password" placeholder="密码">
-                        <button class="btn" type="submit">登录</button>
-                    </form>
+{#                    <form action="{% url 'apps.depotapp.views.login_view' %}" method="post" class="pull-right">#}
+{#                        {% csrf_token %}#}
+{#                        <input name="username" class="input-small" type="text" placeholder="用户名">#}
+{#                        <input name='password' class="input-small" type="password" placeholder="密码">#}
+{#                        <button class="btn" type="submit">登录</button>#}
+{#                    </form>#}
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <form class="navbar-form navbar-right" action="{% url 'apps.depotapp.views.login_view' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input name="username" class="form-control" type="text" placeholder="用户名">
+                                <input name='password' class="form-control" type="password" placeholder="密码">
+                            </div>
+                            <button type="submit" class="btn btn-success">登录</button>
+                        </form>
+                    </div>
                 {% endif %}
             </div>
         </div>
-    </div>
+    </nav>
     <div class="container">
         <div class="content">
             <div class="page-header">
-                <h1>{% block pagename %}页面名称{% endblock %}</h1>
+                <br/>
+                <h2>{% block pagename %}页面名称{% endblock %}</h2>
             </div>
             {% block content %}
             {% endblock %}
