@@ -39,11 +39,6 @@
                         <a href="#contact">联系我们</a>
                     </li>
                 </ul>
-{#                <form action="" class="pull-right">#}
-{#                    <input class="input-small" type="text" placeholder="用户名">#}
-{#                    <input class="input-small" type="password" placeholder="密码">#}
-{#                    <button class="btn" type="submit">登录</button>#}
-{#                </form>#}
                 {% if request.user.is_authenticated %}
                     <div class="pull-right">
                         <a href="#">欢迎您:{{ request.user }}</a>
