@@ -3894,3 +3894,5 @@ KeyError: 'cart'
 [2015-07-30 00:31:40,338] WARNING : Forbidden (CSRF token missing or incorrect.): /account/login/
 [2015-07-30 00:31:49,219] WARNING : Not Found: /favicon.ico
 [2015-07-30 00:31:49,960] WARNING : Not Found: /depotapp/
+[2015-07-30 21:39:52,783] WARNING : Not Found: /favicon.ico
+[2015-07-30 21:39:57,660] WARNING : Not Found: /favicon.ico

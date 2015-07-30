@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'apps.blog',
     'apps.gallery',
     'apps.depotapp',
+    'apps.todo',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -119,6 +120,7 @@ STATICFILES_DIRS = (
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
     os.path.join(BASE_DIR,'apps/depotapp/templates'),
+    os.path.join(BASE_DIR,'apps/todo/templates'),
 )
 
 #Set the cookie expired time(in seconds)

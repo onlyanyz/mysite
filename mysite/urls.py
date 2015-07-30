@@ -22,6 +22,8 @@ urlpatterns = patterns('',
     url(r'^$','mysite.views.index'),
     url(r'^home/',include('apps.blog.urls')),
     url(r'^depotapp/',include('apps.depotapp.urls')),
+    url(r'^todo/',include('apps.todo.urls')),
+
     url(r'^api-auth/',include('rest_framework.urls',namespace='rest_framework')),
 
     url(r'^account/login/$','apps.depotapp.views.login_view'),
