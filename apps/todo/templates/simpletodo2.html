@@ -7,7 +7,7 @@
     </title>
     <link href="static/css/bootstrap-theme.css" rel="stylesheet">
     <link href="static/css/bootstrap.css" rel="stylesheet">
-    <script src="static/js/modernizr.js"></script>
+{#    <script src="static/js/modernizr.js"></script>#}
     <script src="static/js/jquery-2.1.4.js"></script>
     <script src="static/js/bootstrap.js"></script>
     {% block extra_head %}
@@ -48,38 +48,6 @@
     {% endblock %}
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div id="todo" class="well">
-                    {% block todo %}
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <td>
-                                        <h3 class="text-success">待办事项</h3>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for todo in todolist %}
-                                    {% if todo.priority == '1' %}
-                                        <tr class="error">
-                                    {% endif %}
-                                    {% if todo.priority == '2' %}
-                                        <tr class="warning">
-                                    {% endif %}
-                                    {% if todo.priority == '3' %}
-                                        <tr class="info">
-                                    {% endif %}
-                                    <td class="todo">{{ todo.todo }}</td>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class=""
 </body>
 </html>
