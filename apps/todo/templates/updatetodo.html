@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'simpleTodo.html' %}
+{% block title %}更新事项{% endblock %}
+{% block todo %}
+    <form action="{% url 'apps.todo.views.updatetodo' todo.id %}" method="post">
+        {% csrf_token %}
+        <div class="modal-body">
+            <textarea name="todo" class="txtodo" id="txtodo" required="required">{{ todo.todo }}</textarea>
+            <fieldset>
+                <label for="priority" class="radio-inline">
+                    <span class="label label-info">Priority</span>
+                </label>
+                <label for="priority" class="radio-inline">
+                    <input type="radio" name="priority" value="1" {% if todo.priority == '1' %}checked{% endif %}>
+                    <span class="label label-danger">重要</span>
+                </label>
+                <label for="priority" class="radio-inline">
+                    <input type="radio" name="priority" value="2" {% if todo.priority == '2' %}checked{% endif %}>
+                    <span class="label label-danger">警告</span>
+                </label>
+                <label for="priority" class="radio-inline">
+                    <input type="radio" name="priority" value="3" {% if todo.priority == '3' %}checked{% endif %}>
+                    <span class="label label-danger">成功</span>
+                </label>
+            </fieldset>
+        </div>
+        <div class="modal-footer">
+            <button class="btn"  data-dismiss="modal" aria-hidden="true">关闭</button>
+            <button id="send" class="btn btn-success" type="submit" name="submit">保存修改</button>
+        </div>
+    </form>
+{% endblock %}

@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>
-        {% block title %}Simple Todo{% endblock %}
+        {% block title %}待办事项列表{% endblock %}
     </title>
     <link href="static/css/bootstrap-theme.css" rel="stylesheet">
     <link href="static/css/bootstrap.css" rel="stylesheet">
@@ -67,13 +67,13 @@ function sendtwitter(){
                                     <td class="todo">{{ todo.todo }}</td>
                                     <td>
                                         <div class="te">
-                                            <a href="#" title="完成">
+                                            <a href="{% url 'apps.todo.views.todofinish' todo.id %}" title="完成">
                                                 <i class="glyphicon glyphicon-ok"></i>
                                             </a>
-                                            <a href="#" title="编辑">
+                                            <a href="{% url 'apps.todo.views.updatetodo' todo.id %}" title="编辑">
                                                 <i class="glyphicon glyphicon-edit"></i>
                                             </a>
-                                            <a href="#" title="删除">
+                                            <a href="{% url 'apps.todo.views.tododelete' todo.id %}" title="删除">
                                                 <i class="glyphicon glyphicon-trash"></i>
                                             </a>
                                         </div>
@@ -85,13 +85,13 @@ function sendtwitter(){
                                         <td class="ftodo text-muted">{{ ftodo.todo }}</td>
                                         <td>
                                             <div class="te">
-                                                <a href="#" title="repeat">
+                                                <a href="{% url 'apps.todo.views.todoback' ftodo.id %}" title="撤销">
                                                     <i class="glyphicon glyphicon-repeat"></i>
                                                 </a>
-                                                <a href="#" title="编辑">
+                                                <a href="{% url 'apps.todo.views.updatetodo' ftodo.id %}" title="编辑">
                                                     <i class="glyphicon glyphicon-edit"></i>
                                                 </a>
-                                                <a href="#" title="删除">
+                                                <a href="{% url 'apps.todo.views.tododelete' ftodo.id %}" title="删除">
                                                     <i class="glyphicon glyphicon-trash"></i>
                                                 </a>
                                             </div>

@@ -27,7 +27,7 @@
                 <td class="todo">{{ todo.todo }}</td>
                 <td>
                     <div class="te">
-                        <a href="#" title="完成">
+                        <a href="{% url 'apps.todo.views.todofinish' todo.id %}" title="完成">
                             <i class="glyphicon glyphicon-ok"></i>
                         </a>
                         <a href="#" title="编辑">
@@ -45,7 +45,7 @@
                     <td class="ftodo text-muted">{{ ftodo.todo }}</td>
                     <td>
                         <div class="te">
-                            <a href="#" title="repeat">
+                            <a href="#" title="撤销">
                                 <i class="glyphicon glyphicon-repeat"></i>
                             </a>
                             <a href="#" title="编辑">
