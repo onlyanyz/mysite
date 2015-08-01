@@ -7,44 +7,36 @@
     </title>
     <link href="static/css/bootstrap-theme.css" rel="stylesheet">
     <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/todo-main.css" rel="stylesheet">
     <script src="static/js/modernizr.js"></script>
     <script src="static/js/jquery-2.1.4.js"></script>
     <script src="static/js/bootstrap.js"></script>
     {% block extra_head %}
-{#        <style>#}
-{#            body{padding-top: 40px;}#}
-{#            .ftodo{text-decoration: line-through;}#}
-{#            textarea{width: 97%;#}
-{#                padding: 5px;#}
-{#                font-size: 14px;#}
-{#                resize: vertical;#}
-{#            }#}
-{#        </style>#}
-{#        <script>#}
-{#            function sendtwitter(){#}
-{#                $('#myModal form').submit(function(){#}
-{#                    $.ajax({#}
-{#                        type:"POST",#}
-{#                        data:$('#myModal form').serialize(),#}
-{#                        url:"{% url 'add' %}",#}
-{#                        cache:false,#}
-{#                        dataType:"html",#}
-{#                        success:function(html, textStatus){#}
-{#                            $('#todo').replaceWith(html);#}
-{#                            $('#myModal').modal('hide');#}
-{#                            $('#myModal form')[0].reset();#}
-{#                        },#}
-{#                        error: function (XMLHttpRequest, textStatus, errorThrown){#}
-{#                            $('#comment_form form').replaceWith('Your comment was unable to be posted at this time.  We apologise for the inconvenience.');#}
-{#                        }#}
-{#                    });#}
-{#                    return false;#}
-{#                });#}
-{#            }#}
-{#            $(document).ready(function(){#}
-{#                sendtwitter();#}
-{#            })#}
-{#        </script>#}
+        <script>
+function sendtwitter(){
+    $('#myModal form').submit(function(){
+        $.ajax({
+            type:"POST",
+            data:$('#myModal form').serialize(),
+            url:"{% url 'apps.todo.views.addtodo' %}",
+            cache:false,
+            dataType:"html",
+            success:function(html, textStatus){
+                $('#todo').replaceWith(html);
+                $('#myModal').modal('hide');
+                $('#myModal form')[0].reset();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown){
+                $('#comment_form form').replaceWith('Your comment was unable to be posted at this time.  We apologise for the inconvenience.');
+            }
+        });
+        return false;
+    });
+}
+            $(document).ready(function(){
+                sendtwitter();
+            })
+        </script>
     {% endblock %}
 </head>
 <body>
@@ -64,20 +56,93 @@
                             <tbody>
                                 {% for todo in todolist %}
                                     {% if todo.priority == '1' %}
-                                        <tr class="error">
+                                        <tr class="bg-danger">
                                     {% endif %}
                                     {% if todo.priority == '2' %}
-                                        <tr class="warning">
+                                        <tr class="bg-warning">
                                     {% endif %}
                                     {% if todo.priority == '3' %}
-                                        <tr class="info">
+                                        <tr class="bg-info">
                                     {% endif %}
                                     <td class="todo">{{ todo.todo }}</td>
+                                    <td>
+                                        <div class="te">
+                                            <a href="#" title="完成">
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                            </a>
+                                            <a href="#" title="编辑">
+                                                <i class="glyphicon glyphicon-edit"></i>
+                                            </a>
+                                            <a href="#" title="删除">
+                                                <i class="glyphicon glyphicon-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                {% for ftodo in finishtodos %}
+                                    <tr class="bg-success">
+                                        <td class="ftodo text-muted">{{ ftodo.todo }}</td>
+                                        <td>
+                                            <div class="te">
+                                                <a href="#" title="repeat">
+                                                    <i class="glyphicon glyphicon-repeat"></i>
+                                                </a>
+                                                <a href="#" title="编辑">
+                                                    <i class="glyphicon glyphicon-edit"></i>
+                                                </a>
+                                                <a href="#" title="删除">
+                                                    <i class="glyphicon glyphicon-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
+                        <a class="btn btn-success" href="#myModal" role="button" data-toggle="modal">
+                            <i class="glyphicon glyphicon-plus"></i>
+                            <span>添加</span>
+                        </a>
                     {% endblock %}
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">添加事项</h3>
+                </div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <textarea name="todo" class="txtodo" id="txtodo" required="required">{{ todo.todo }}</textarea>
+                        <fieldset>
+                            <label for="priority" class="radio-inline">
+                                <span class="label label-info">Priority</span>
+                            </label>
+                            <label for="priority" class="radio-inline" >
+                                <input type="radio" name="priority" value="1"/>
+                                <span class="label label-danger">重要</span>
+                            </label>
+                            <label for="priority" class="radio-inline">
+                                <input type="radio" name="priority" value="2"/>
+                                <span class="label label-warning">警告</span>
+                            </label>
+                            <label for="priority" class="radio-inline">
+                                <input type="radio" name="priority" value="3"/>
+                                <span class="label label-success">成功</span>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+                        <button class="btn btn-success" id="send" type="submit" name="submit">保存</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
