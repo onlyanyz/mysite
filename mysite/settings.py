@@ -127,6 +127,11 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,'apps/todo/templates'),
 )
 
+# TEMPLATE_LOADERS = (
+#     'django.template.loaders.filesystem.Loader',
+#     'django.template.loaders.app_directories.Loader',
+# )
+
 #Set the cookie expired time(in seconds)
 SESSION_COOKIE_AGE=86400
 SESSION_EXPIRE_AT_BROWSER_CLOSE=False
@@ -149,6 +154,7 @@ REST_FRAMEWORK={
     'PAGINATE_BY': 10,
     # 'PAGINATE_BY_PARAM': 'page_size',
     # 'MAX_PAGINATE_BY': 100
+    # 'DEFAULT_CONTENT_NEGOTIATION_CLASS': 'depotapp.negotiation.IgnoreClientContentNegotiation',
 }
 
 # logging configuration

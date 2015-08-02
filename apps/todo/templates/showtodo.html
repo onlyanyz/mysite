@@ -1,15 +1,73 @@
-<div id="todo">
+{#<div id="todo">#}
+{#    <table class="table table-hover">#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <td>#}
+{#                    <h4>待办</h4>#}
+{#                </td>#}
+{#                <td>#}
+{#                    <a class="btn btn-success" href="#myModal" role="button" data-toggle="modal">#}
+{#                        <i class="glyphicon glyphicon-plus"></i>#}
+{#                        <span>添加</span>#}
+{#                    </a>#}
+{#                </td>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#            {% for todo in todolist %}#}
+{#                {% if todo.priority == '1' %}#}
+{#                    <tr class="bg-danger">#}
+{#                {% endif %}#}
+{#                {% if todo.priority == '2' %}#}
+{#                    <tr class="bg-warning">#}
+{#                {% endif %}#}
+{#                {% if todo.priority == '3' %}#}
+{#                    <tr class="bg-info">#}
+{#                {% endif %}#}
+{#                <td class="todo">{{ todo.todo }}</td>#}
+{#                <td>#}
+{#                    <div class="te">#}
+{#                        <a href="{% url 'apps.todo.views.todofinish' todo.id %}" title="完成">#}
+{#                            <i class="glyphicon glyphicon-ok"></i>#}
+{#                        </a>#}
+{#                        <a href="#" title="编辑">#}
+{#                            <i class="glyphicon glyphicon-edit"></i>#}
+{#                        </a>#}
+{#                        <a href="#" title="删除">#}
+{#                            <i class="glyphicon glyphicon-trash"></i>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </td>#}
+{#            </tr>#}
+{#            {% endfor %}#}
+{#            {% for ftodo in finishtodos %}#}
+{#                <tr class="bg-success">#}
+{#                    <td class="finish-todo text-muted">{{ ftodo.todo }}</td>#}
+{#                    <td>#}
+{#                        <div class="te">#}
+{#                            <a href="#" title="撤销">#}
+{#                                <i class="glyphicon glyphicon-repeat"></i>#}
+{#                            </a>#}
+{#                            <a href="#" title="编辑">#}
+{#                                <i class="glyphicon glyphicon-edit"></i>#}
+{#                            </a>#}
+{#                            <a href="#" title="删除">#}
+{#                                <i class="glyphicon glyphicon-trash"></i>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+{#</div>#}
+
+<div id="todo" class="well">
     <table class="table table-hover">
         <thead>
             <tr>
                 <td>
-                    <h4>待办</h4>
-                </td>
-                <td>
-                    <a class="btn btn-success" href="#myModal" role="button" data-toggle="modal">
-                        <i class="glyphicon glyphicon-plus"></i>
-                        <span>添加</span>
-                    </a>
+                    <h3 class="text-success">待办事项</h3>
                 </td>
             </tr>
         </thead>
@@ -30,10 +88,10 @@
                         <a href="{% url 'apps.todo.views.todofinish' todo.id %}" title="完成">
                             <i class="glyphicon glyphicon-ok"></i>
                         </a>
-                        <a href="#" title="编辑">
+                        <a href="{% url 'apps.todo.views.updatetodo' todo.id %}" title="编辑">
                             <i class="glyphicon glyphicon-edit"></i>
                         </a>
-                        <a href="#" title="删除">
+                        <a href="{% url 'apps.todo.views.tododelete' todo.id %}" title="删除">
                             <i class="glyphicon glyphicon-trash"></i>
                         </a>
                     </div>
@@ -42,16 +100,16 @@
             {% endfor %}
             {% for ftodo in finishtodos %}
                 <tr class="bg-success">
-                    <td class="ftodo text-muted">{{ ftodo.todo }}</td>
+                    <td class="finish-todo text-muted">{{ ftodo.todo }}</td>
                     <td>
                         <div class="te">
-                            <a href="#" title="撤销">
+                            <a href="{% url 'apps.todo.views.todoback' ftodo.id %}" title="撤销">
                                 <i class="glyphicon glyphicon-repeat"></i>
                             </a>
-                            <a href="#" title="编辑">
+                            <a href="{% url 'apps.todo.views.updatetodo' ftodo.id %}" title="编辑">
                                 <i class="glyphicon glyphicon-edit"></i>
                             </a>
-                            <a href="#" title="删除">
+                            <a href="{% url 'apps.todo.views.tododelete' ftodo.id %}" title="删除">
                                 <i class="glyphicon glyphicon-trash"></i>
                             </a>
                         </div>
@@ -60,4 +118,8 @@
             {% endfor %}
         </tbody>
     </table>
+    <a class="btn btn-success" href="#myModal" role="button" data-toggle="modal">
+        <i class="glyphicon glyphicon-plus"></i>
+        <span>添加</span>
+    </a>
 </div>

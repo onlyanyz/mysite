@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="static/css/todo-main.css" rel="stylesheet">
+    <script src="static/js/jquery-2.1.4.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    {% block extra_head %}
+    {% endblock %}
+    <title>
+        {% block title %}首页{% endblock %}
+    </title>
+</head>
+<body>
+    <div id="header" class="nav-main">
+        <div class="col-md-10 col-md-offset-1">
+            <ul class="nav-todo">
+                <li><a href="">首页</a></li>
+                <li><a href="">今日</a></li>
+                <li><a href="">本周</a></li>
+                <li><a href="">下周</a></li>
+                <li><a href="">已完成</a></li>
+            </ul>
+            {% if request.user.is_authenticated %}
+                <div class="pull-right">
+                    <a href="#">欢迎您:{{ request.user }}</a>
+                    <a class="btn btn-danger small" href="{% url 'apps.todo.views.logout_view' %}">注销</a>
+                </div>
+            {% else %}
+{#                <form class="navbar-form navbar-right" action="{% url 'apps.todo.views.login_view' %}" method="post">#}
+{#                    {% csrf_token %}#}
+{#                    <div class="form-group">#}
+{#                        <input name="username" class="form-control" type="text" placeholder="用户名">#}
+{#                        <input name='password' class="form-control" type="password" placeholder="密码">#}
+{#                    </div>#}
+{#                    <button type="submit" class="btn btn-success">登录</button>#}
+{#                </form>#}
+                <ul class="nav-todo">
+                    <li><a href="" style="float: right">登录</a></li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+    <div id="container" class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div id="todo" class="well">
+                    {% block todo %}
+                        <p>这是要替换的todo部分</p>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel">添加事项</h3>
+                </div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <textarea name="todo" id="txtodo" required="required">{{ todo.todo }}</textarea>
+                        <fieldset>
+                            <label for="priority" class="radio-inline">
+                                <span class="label label-info">优先级</span>
+                            </label>
+                            <label for="priority1" class="radio-inline">
+                                <input type="radio" id="priority1" name="priority" value="1" checked/>
+                                <span class="label label-danger">高</span>
+                            </label>
+                            <label for="priority2" class="radio-inline">
+                                <input type="radio" id="priority2" name="priority" value="2"/>
+                                <span class="label label-warning">中</span>
+                            </label>
+                            <label for="priority3" class="radio-inline">
+                                <input type="radio" id="priority3" name="priority" value="3"/>
+                                <span class="label label-success">低</span>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+                        <button class="btn btn-success" id="send" type="submit" name="submit">保存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

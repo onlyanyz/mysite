@@ -7,19 +7,19 @@
             <textarea name="todo" class="txtodo" id="txtodo" required="required">{{ todo.todo }}</textarea>
             <fieldset>
                 <label for="priority" class="radio-inline">
-                    <span class="label label-info">Priority</span>
+                    <span class="label label-info">优先级</span>
                 </label>
-                <label for="priority" class="radio-inline">
-                    <input type="radio" name="priority" value="1" {% if todo.priority == '1' %}checked{% endif %}>
-                    <span class="label label-danger">重要</span>
+                <label for="priority1" class="radio-inline">
+                    <input type="radio" id="priority1" name="priority" value="1" {% if todo.priority == '1' %}checked{% endif %}>
+                    <span class="label label-danger">高</span>
                 </label>
-                <label for="priority" class="radio-inline">
-                    <input type="radio" name="priority" value="2" {% if todo.priority == '2' %}checked{% endif %}>
-                    <span class="label label-danger">警告</span>
+                <label for="priority2" class="radio-inline">
+                    <input type="radio" id="priority2" name="priority" value="2" {% if todo.priority == '2' %}checked{% endif %}>
+                    <span class="label label-warning">中</span>
                 </label>
-                <label for="priority" class="radio-inline">
-                    <input type="radio" name="priority" value="3" {% if todo.priority == '3' %}checked{% endif %}>
-                    <span class="label label-danger">成功</span>
+                <label for="priority3" class="radio-inline">
+                    <input type="radio" id="priority3" name="priority" value="3" {% if todo.priority == '3' %}checked{% endif %}>
+                    <span class="label label-success">低</span>
                 </label>
             </fieldset>
         </div>

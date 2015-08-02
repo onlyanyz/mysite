@@ -4527,3 +4527,202 @@ Traceback (most recent call last):
   File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 452, in _reverse_with_prefix
     (lookup_view_s, args, kwargs, len(patterns), patterns))
 NoReverseMatch: Reverse for 'apps.todo.views.updatetodo' with arguments '('',)' and keyword arguments '{}' not found. 1 pattern(s) tried: ['todo/updatetodo/(?P<id>\\d+)/$']
+[2015-08-02 00:18:39,168] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 00:19:36,576] WARNING : Not Found: /todo/updatetodo/12/static/js/modernizr.js
+[2015-08-02 00:19:41,424] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 00:19:48,121] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 00:19:51,446] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 00:19:53,414] WARNING : Not Found: /todo/updatetodo/12/static/js/modernizr.js
+[2015-08-02 00:20:00,313] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 00:20:25,690] WARNING : Not Found: /todo/updatetodo/12/static/js/modernizr.js
+[2015-08-02 00:20:36,131] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 09:32:59,187] WARNING : Not Found: /favicon.ico
+[2015-08-02 09:33:00,595] WARNING : Not Found: /favicon.ico
+[2015-08-02 10:11:16,381] WARNING : Not Found: /favicon.ico
+[2015-08-02 10:11:16,806] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 10:24:44,848] WARNING : Not Found: /todo/updatetodo/3/static/js/modernizr.js
+[2015-08-02 10:32:03,836] WARNING : Not Found: /favicon.ico
+[2015-08-02 10:56:16,075] WARNING : Not Found: /favicon.ico
+[2015-08-02 10:56:16,795] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 11:01:44,154] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 11:01:47,638] WARNING : Not Found: /todo/updatetodo/12/static/js/modernizr.js
+[2015-08-02 11:01:54,367] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 11:01:57,563] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 11:02:00,025] WARNING : Not Found: /todo/updatetodo/17/static/js/modernizr.js
+[2015-08-02 11:02:05,221] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 11:18:14,447] WARNING : Not Found: /favicon.ico
+[2015-08-02 11:18:14,977] WARNING : Not Found: /todo/static/js/modernizr.js
+[2015-08-02 11:18:21,759] WARNING : Not Found: /todo/updatetodo/17/static/js/modernizr.js
+[2015-08-02 12:07:08,704] WARNING : Not Found: /favicon.ico
+[2015-08-02 12:17:29,400] WARNING : Not Found: /favicon.ico
+[2015-08-02 17:55:01,500] WARNING : Not Found: /favicon.ico
+[2015-08-02 20:20:50,549] ERROR : Internal Server Error: /todo/addtodo/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\mysite\apps\todo\views.py", line 49, in addtodo
+    priority=request.POST['priority']
+  File "D:\Python27\lib\site-packages\django\utils\datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'priority'"
+[2015-08-02 20:21:29,609] ERROR : Internal Server Error: /todo/addtodo/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\mysite\apps\todo\views.py", line 49, in addtodo
+    priority=request.POST['priority']
+  File "D:\Python27\lib\site-packages\django\utils\datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'priority'"
+[2015-08-02 20:33:18,450] ERROR : Internal Server Error: /todo/addtodo/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\mysite\apps\todo\views.py", line 48, in addtodo
+    atodo=request.POST['todo']
+  File "D:\Python27\lib\site-packages\django\utils\datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'todo'"
+[2015-08-02 20:57:22,200] ERROR : Internal Server Error: /todo/addtodo/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\mysite\apps\todo\views.py", line 57, in addtodo
+    return render_to_response('updatetodo.html',{'todolist':todolist,'finishtodos':finishtodos},context_instance=RequestContext(request))
+  File "D:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 29, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "D:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    return t.render(context_instance)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 140, in render
+    return self._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\defaulttags.py", line 447, in render
+    six.reraise(*exc_info)
+  File "D:\Python27\lib\site-packages\django\template\defaulttags.py", line 433, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 532, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 452, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'apps.todo.views.updatetodo' with arguments '('',)' and keyword arguments '{}' not found. 1 pattern(s) tried: ['todo/updatetodo/(?P<id>\\d+)/$']
+[2015-08-02 20:57:43,634] ERROR : Internal Server Error: /todo/addtodo/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\mysite\apps\todo\views.py", line 57, in addtodo
+    return render_to_response('updatetodo.html',{'todolist':todolist,'finishtodos':finishtodos},context_instance=RequestContext(request))
+  File "D:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 29, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "D:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    return t.render(context_instance)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 140, in render
+    return self._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\defaulttags.py", line 447, in render
+    six.reraise(*exc_info)
+  File "D:\Python27\lib\site-packages\django\template\defaulttags.py", line 433, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 532, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 452, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'apps.todo.views.updatetodo' with arguments '('',)' and keyword arguments '{}' not found. 1 pattern(s) tried: ['todo/updatetodo/(?P<id>\\d+)/$']
+[2015-08-02 21:18:34,696] WARNING : Not Found: /todo/tododelete/15/
+[2015-08-02 21:18:34,660] WARNING : Not Found: /todo/tododelete/15/
+[2015-08-02 22:18:35,213] WARNING : Not Found: /favicon.ico
+[2015-08-02 23:14:11,398] ERROR : Internal Server Error: /todo/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\mysite\apps\todo\views.py", line 15, in todolist
+    todolist=Todo.objects.filter(flag=1)
+  File "D:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 29, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "D:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    return t.render(context_instance)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 140, in render
+    return self._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\defaulttags.py", line 305, in render
+    return nodelist.render(context)
+  File "D:\Python27\lib\site-packages\django\template\base.py", line 840, in render
+    bit = self.render_node(node, context)
+  File "D:\Python27\lib\site-packages\django\template\debug.py", line 78, in render_node
+    return node.render(context)
+  File "D:\Python27\lib\site-packages\django\template\defaulttags.py", line 447, in render
+    six.reraise(*exc_info)
+  File "D:\Python27\lib\site-packages\django\template\defaulttags.py", line 433, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=context.current_app)
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 532, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\Python27\lib\site-packages\django\core\urlresolvers.py", line 452, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'apps.todo.views.login_view' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+[2015-08-02 23:25:07,470] WARNING : Not Found: /favicon.ico
