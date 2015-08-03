@@ -3,8 +3,54 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/login.css" rel="stylesheet">
 </head>
 <body>
-
+    <div class="box">
+		<div class="login-box">
+			<div class="login-title text-center">
+				<h1><small>登录</small></h1>
+			</div>
+			<div class="login-content ">
+			<div class="form">
+			<form action="{% url 'apps.todo.views.login_view' %}" method="post">
+                {% csrf_token %}
+				<div class="form-group">
+					<div class="col-md-12">
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+							<input type="text" id="username" name="username" class="form-control" placeholder="用户名">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-12  ">
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+							<input type="password" id="password" name="password" class="form-control" placeholder="密码">
+						</div>
+					</div>
+				</div>
+				<div class="form-group form-actions">
+					<div class="col-md-4 col-md-offset-4 ">
+						<button type="submit" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-off"></span> 登录</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-6 link">
+						<p class="text-center remove-margin"><small>忘记密码？</small> <a href=""><small>找回</small></a>
+						</p>
+					</div>
+					<div class="col-md-6 link">
+						<p class="text-center remove-margin"><small>还没注册?</small> <a href=""><small>注册</small></a>
+						</p>
+					</div>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>

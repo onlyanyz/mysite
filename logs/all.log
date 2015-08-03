@@ -4726,3 +4726,9 @@ Traceback (most recent call last):
     (lookup_view_s, args, kwargs, len(patterns), patterns))
 NoReverseMatch: Reverse for 'apps.todo.views.login_view' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
 [2015-08-02 23:25:07,470] WARNING : Not Found: /favicon.ico
+[2015-08-03 23:15:04,947] WARNING : Not Found: /favicon.ico
+[2015-08-04 00:06:10,411] WARNING : Forbidden (CSRF token missing or incorrect.): /todo/login/
+[2015-08-04 00:06:24,891] WARNING : Forbidden (CSRF token missing or incorrect.): /todo/login/
+[2015-08-04 00:06:46,661] WARNING : Not Found: /favicon.ico
+[2015-08-04 00:07:59,674] WARNING : Forbidden (CSRF token missing or incorrect.): /todo/login/
+[2015-08-04 00:34:21,532] WARNING : Not Found: /favicon.ico

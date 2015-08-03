@@ -96,3 +96,6 @@ def logout_view(request):
 
 def base(request):
     return render_to_response('base-todo.html')
+
+def login_page(request):
+    return render_to_response('login.html',context_instance=RequestContext(request))

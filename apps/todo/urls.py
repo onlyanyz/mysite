@@ -11,6 +11,7 @@ urlpatterns=patterns('',
     url(r'^todoback/(?P<id>\d+)/$',views.todoback),
     url(r'^account/login/$',views.login_view),
     url(r'^account/logout/$',views.logout_view),
+    url(r'^login/$',views.login_page),
 
     url(r'^base/$',views.base),
 )
