@@ -59,6 +59,9 @@ ul.nav-todo li a:active{
     background:#D9534F;
     text-decoration: none;
 }
+.header-userinfo{
+    float: right;
+}
 /*导航栏样式结束*/
 #container{
     padding-top: 45px;

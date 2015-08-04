@@ -4732,3 +4732,23 @@ NoReverseMatch: Reverse for 'apps.todo.views.login_view' with arguments '()' and
 [2015-08-04 00:06:46,661] WARNING : Not Found: /favicon.ico
 [2015-08-04 00:07:59,674] WARNING : Forbidden (CSRF token missing or incorrect.): /todo/login/
 [2015-08-04 00:34:21,532] WARNING : Not Found: /favicon.ico
+[2015-08-04 23:15:39,000] WARNING : Not Found: /favicon.ico
+[2015-08-04 23:15:55,614] WARNING : Not Found: /favicon.ico
+[2015-08-04 23:50:03,595] WARNING : Not Found: /favicon.ico
+[2015-08-05 00:04:15,453] ERROR : Internal Server Error: /todo/account/register/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view apps.todo.views.register didn't return an HttpResponse object.
+[2015-08-05 00:16:22,792] WARNING : Not Found: /favicon.ico
+[2015-08-05 00:16:24,533] WARNING : Not Found: /favicon.ico
+[2015-08-05 00:30:34,668] WARNING : Not Found: /favicon.ico
+[2015-08-05 00:30:36,872] ERROR : Internal Server Error: /todo/account/login/
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\django\core\handlers\base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\mysite\apps\todo\views.py", line 84, in login_view
+    user=authenticate(username=request.POST['username'],password=request.POST['password'])
+  File "D:\Python27\lib\site-packages\django\utils\datastructures.py", line 301, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+MultiValueDictKeyError: "'username'"
