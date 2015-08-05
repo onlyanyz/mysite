@@ -4752,3 +4752,5 @@ Traceback (most recent call last):
   File "D:\Python27\lib\site-packages\django\utils\datastructures.py", line 301, in __getitem__
     raise MultiValueDictKeyError(repr(key))
 MultiValueDictKeyError: "'username'"
+[2015-08-06 00:12:01,756] WARNING : Not Found: /favicon.ico
+[2015-08-06 00:12:03,408] WARNING : Not Found: /favicon.ico

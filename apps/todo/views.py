@@ -101,4 +101,6 @@ def login_page(request):
     return render_to_response('login.html',context_instance=RequestContext(request))
 
 def register(request):
+    if request.method=='POST':
+        pass
     return render_to_response('register.html',context_instance=RequestContext(request))
