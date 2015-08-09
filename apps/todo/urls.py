@@ -12,7 +12,8 @@ urlpatterns=patterns('',
     url(r'^account/login/$',views.login_view),
     url(r'^account/logout/$',views.logout_view),
     url(r'^account/register/$',views.register),
-    url(r'^login/$',views.login_page),
+    url(r'^login/$',views.login_view),
 
     url(r'^base/$',views.base),
+    url(r'^404/$',views.page404),
 )
